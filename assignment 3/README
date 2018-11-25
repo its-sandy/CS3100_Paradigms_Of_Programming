@@ -1,0 +1,55 @@
+Description of Predicates:-
+
+mmember(X,Y):-  checks if element X is present in list Y
+
+isedge(U,V):-   used to find if bidirectional edge exists between U and V
+
+getSequence(N, Y):- Y = [N,...,3,2,1]
+
+getAllVertices(Vertices);-  returns list of all vertices in graph
+
+path(U, V, Path, AlreadySeen):- finds a path between edges U and V given that vertices in AlreadySeen cannot be used again
+
+findPath(U, V, Path, AlreadySeen):- used to call path predicate
+
+updateAlreadySeen(U, V, AlreadySeen, Path, NewAlreadySeen):- updates the already seen vertices list by adding the non-terminal vertices (U and V) of Path
+
+findKDisjointPaths(U, V, K, NewAlreadySeen, Paths]):- returns a list of list of K disjoint paths (if it exists) between U and Vertices
+
+newVertexConnectedness(U, Vertices, K):- checks if vertex U is K connected with all vertices in Vertices
+
+newGraphConnectedness(Vertices, K):- checks if the set of Vertices are K connected
+
+conn(K):- checks if the graph is K connected
+
+biconn:- simple calls conn(2) to check if graph is biconnected
+
+mpath(U, V, K):- finds K disjoint paths between U and V (using findKDisjointPaths) and then prints them in required format
+
+printPath(Path):- prints one path with arrows in between vertices
+
+printPaths(Cur, K, Paths):- Prints the K Pths as required. Cur is used to maintain counter
+
+isLessThan(A,B):- simple helper predicate
+
+///////////////////////////////
+BONUS:-
+
+vertexSameComp(U,V):- checks if there exists a biconnected component with both vertices U and V.
+                      This happens if U and V are same, or if there are at least 2 paths between them
+
+edgeSameComp(Edge1, Edge2):- Checks if the 2 edges belong to the same biconnected component.
+                            This happens only if their corresponding combinations of endpoints belong to the same component.
+
+findAllEdgeSameComp(X,Edges, NewComp):- finds all edges in Edges that lie in the same component as X
+
+findComponents([Edges, Components):- Finds all components (as list of list) in the set Edges.
+                                    It keeps finding new components and subtracts it from the existing set og edges, recursively
+
+printbi():- finds all components in the graph and prints them
+
+bicomp(K):- checks if the number of components in the graph is K
+
+printEdges(Comp):- used to print a single component Comp as required
+
+printComponents(Cur, [Comp|Comps]):- prints the given set of components as required, Cur is used to maintain couter

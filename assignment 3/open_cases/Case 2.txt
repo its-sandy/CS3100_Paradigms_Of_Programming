@@ -1,0 +1,19 @@
+edge(1,2).
+edge(1,3).
+edge(2,3).
+edge(3,4).
+edge(4,5).
+
+BICONN:  FALSE
+CONN(3): FALSE 
+CONN(1): TRUE
+MPATH(2, 3, 2) : 
+[2, 3]
+[2, 1, 3]
+MPATH(1, 3, 2) :
+[1, 3]
+[1, 2, 3]
+MPATH(1, 3, 3) :
+[1, 3]
+[1, 2, 3]
+[]

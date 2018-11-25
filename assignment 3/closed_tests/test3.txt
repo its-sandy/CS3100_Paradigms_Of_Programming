@@ -1,0 +1,83 @@
+## 9 vertices 
+## disconnected graph (no edges from 2)
+
+edge(1, 3).
+edge(1, 4).
+edge(1, 5).
+edge(1, 7).
+edge(1, 8).
+edge(1, 9).
+edge(3, 4).
+edge(3, 5).
+edge(3, 9).
+edge(4, 5).
+edge(4, 6).
+edge(4, 7).
+edge(4, 9).
+edge(5, 7).
+edge(5, 8).
+edge(6, 7).
+edge(6, 8).
+edge(8, 9).
+
+## connectivity
+BICONN
+False
+
+CONN(1)
+False
+
+CONN(3)
+False
+
+## some mpath results
+
+mpath(1, 2, 1)
+False
+
+mpath(1, 3, 1)
+[1, 3]
+
+mpath(2, 6, 1)
+False
+
+mpath(4, 8, 1)
+[4, 1, 8]
+
+mpath(2, 6, 2)
+False
+
+mpath(5, 9, 2)
+[5, 1, 9]
+[5, 3, 9]
+
+mpath(7, 9, 2)
+[7, 1, 9]
+[7, 4, 9]
+
+mpath(5, 7, 3)
+[5, 7]
+[5, 1, 7]
+[5, 4, 7]
+
+mpath(2, 4, 3)
+False
+
+mpath(8, 9, 3)
+[8, 9]
+[8, 1, 9]
+[8, 5, 3, 9]
+
+mpath(6, 7, 4)
+False
+
+mpath(8, 9, 4)
+[8, 9]
+[8, 1, 9]
+[8, 5, 3, 9]
+[8, 6, 4, 9]
+
+
+
+
+
